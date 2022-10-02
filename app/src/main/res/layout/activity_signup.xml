@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_bg_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="250dp"
+            android:text="Đăng Ký"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Tên Đăng Nhập"
+            android:ems="15"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="150dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Mật Khẩu"
+            android:ems="15"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="150dp"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Email"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="150dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="600dp"
+            >
+            <Button
+                android:id="@+id/signin"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/email"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/startblue"
+                android:text="Sign in"
+                android:textColor="@color/graylight"
+                android:textSize="24dp"></Button>
+
+            <Button
+                android:id="@+id/signup"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/email"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/startblue"
+                android:text="Sign up"
+                android:textColor="@color/graylight"
+                android:textSize="24dp"></Button>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
