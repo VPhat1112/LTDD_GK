@@ -4,13 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/border.xml" value="0.2095" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_home.xml" value="0.20588235294117646" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/buttonstyle.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/gradient.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/ic_baseline_subtitles_24.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/drawable/montserrat_bold.xml" value="0.2095" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/font/montserrat_bold.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_detail.xml" value="0.12322738386308069" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_dialog.xml" value="0.20588235294117646" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_home.xml" value="0.15236928104575165" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_profile.xml" value="0.20588235294117646" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_signin.xml" value="0.15236928104575165" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_signup.xml" value="0.15236928104575165" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_profile.xml" value="0.176" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_signin.xml" value="0.136" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/activity_signup.xml" value="0.136" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/item_layout.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/layout/layout_item.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/menu/menu.xml" value="0.2421875" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/KTRA_GK/app/src/main/res/menu/menu_content.xml" value="0.2421875" />
       </map>
     </option>
   </component>

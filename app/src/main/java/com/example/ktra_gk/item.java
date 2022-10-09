@@ -1,11 +1,11 @@
 package com.example.ktra_gk;
 
-public class item
+public class Item
 {
     private String itemName;
-    private String images_pet;
+    private int images_pet;
     private String itemInfo;
-    public item(String itemName,String images_dinner,String itemInfo){
+    public Item(String itemName,int images_dinner,String itemInfo){
         this.itemName=itemName;
         this.images_pet=images_dinner;
         this.itemInfo=itemInfo;
@@ -19,11 +19,11 @@ public class item
         this.itemName = itemName;
     }
 
-    public String getImages_dinner() {
+    public int getImages_dinner() {
         return images_pet;
     }
 
-    public void setImages_dinner(String images_dinner) {
+    public void setImages_dinner(int  images_dinner) {
         this.images_pet = images_dinner;
     }
 

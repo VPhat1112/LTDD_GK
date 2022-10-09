@@ -1,5 +1,6 @@
 package com.example.ktra_gk;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,13 +13,12 @@ import android.widget.TextView;
 import java.util.List;
 
 public class Adapter extends BaseAdapter {
-    private List<item> itemList;
+    private List<Item> itemList;
     private LayoutInflater layoutInflater;
-    private Context context;
-    public Adapter(Context context,List<item> itemList){
-        this.context=context;
+    private Activity activity;
+    public Adapter(Activity activity,List<Item> itemList){
+        this.activity=activity;
         this.itemList=itemList;
-        layoutInflater=LayoutInflater.from(context);
     }
     @Override
     public int getCount(){
@@ -38,39 +38,29 @@ public class Adapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder holder;
-        if (view == null) {
-            view = layoutInflater.inflate(R.layout.layout_item, null);
-            holder = new ViewHolder();
-            holder.dinnerView = (ImageView) view.findViewById(R.id.imageView_dinner);
-            holder.itemNameView = (TextView) view.findViewById(R.id.textView_itemName);
-            holder.infoView = (TextView) view.findViewById(R.id.textView_info);
-            view.setTag(holder);
-        } else {
-            holder = (ViewHolder) view.getTag();
-        }
+        LayoutInflater inflater= activity.getLayoutInflater();
+        view = inflater.inflate(R.layout.layout_item,null);
+        ImageView dinnerView = (ImageView) view.findViewById(R.id.imageView_dinner);
+        TextView itemNameView = (TextView) view.findViewById(R.id.textView_itemName);
+        TextView infoView = (TextView) view.findViewById(R.id.textView_info);
 
-        item dinner = this.itemList.get(i);
-        holder.itemNameView.setText(dinner.getItemName());
-        holder.infoView.setText(dinner.getItemInfo());
+        Item item =itemList.get(i);
 
-        int imageId = this.getMipmapResIdByName(dinner.getImages_dinner());
+        dinnerView.setImageResource(item.getImages_dinner());
+        itemNameView.setText(item.getItemName());
+        infoView.setText(item.getItemInfo());
 
-        holder.dinnerView.setImageResource(imageId);
+
 
         return view;
     }
     public int getMipmapResIdByName(String resName)  {
-        String pkgName = context.getPackageName();
+        String pkgName = activity.getPackageName();
         // Return 0 if not found.
-        int resID = context.getResources().getIdentifier(resName , "mipmap", pkgName);
+        int resID = activity.getResources().getIdentifier(resName , "mipmap", pkgName);
         Log.i("CustomListView", "Res Name: "+ resName+"==> Res ID = "+ resID);
         return resID;
     }
-    static class ViewHolder {
-        ImageView dinnerView;
-        TextView itemNameView;
-        TextView infoView;
-    }
+
 
 }

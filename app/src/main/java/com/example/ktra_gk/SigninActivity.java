@@ -1,34 +1,50 @@
 package com.example.ktra_gk;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class SigninActivity extends MainActivity {
-    private Button btnLogin,btnSignUp;
-    private TextView user, password;
+    private Button btnLogin;
+    private TextView usertext, passwordtext,btnSignUp;
+    private EditText user,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
         btnLogin = (Button) findViewById(R.id.signin);
-        btnSignUp = (Button) findViewById(R.id.signup);
-        user = (TextView) findViewById(R.id.username);
-        password = (TextView) findViewById(R.id.password);
+        btnSignUp = (TextView) findViewById(R.id.signup);
+        usertext = (TextView) findViewById(R.id.usernametextid);
+        passwordtext = (TextView) findViewById(R.id.passwordtextid);
+        user = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(user.getText().toString().equals("admin") && password.getText().toString().equals("12345"))
                 {
-                    Intent intent = new Intent(SigninActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SigninActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }
+                else new AlertDialog.Builder(SigninActivity.this).setIcon(R.drawable.ic_baseline_error_outline_24)
+                        .setTitle("WRONG USERNAME OR PASSWORD")
+                        .setMessage("Please enter true")
+                        .setNegativeButton("Back",null)
+                        .show();
+
+
+
             }
         });
 
@@ -39,41 +55,54 @@ public class SigninActivity extends MainActivity {
                 startActivity(intent);
             }
         });
+        user.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence,
+                                          int i, int i1, int i2) {
+                //Gọi trước khi text thay đổi
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence,
+                                      int i, int i1, int i2) {
+                if (charSequence.length() ==0) {
+                    user.setError("Bạn bắt buộc phải nhập username");
+                } else {
+                    user.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                //Gọi sau khi thay đổi
+
+            }
+        });
+        password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence,
+                                          int i, int i1, int i2) {
+                //Gọi trước khi text thay đổi
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence,
+                                      int i, int i1, int i2) {
+                if (charSequence.length() ==0) {
+                    password.setError("Bạn bắt buộc phải nhập password");
+                } else {
+                    password.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                //Gọi sau khi thay đổi
+
+            }
+        });
 
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(newBase);
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("AAA", "onStart Sinin_Activity");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("AAA","onStop Sinin_Activity");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("AAA","onDestroy Sinin_Activity");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("AAA","onPause Sinin_Activity");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("AAA","onRestart Sinin_Activity");
-    }
 }
