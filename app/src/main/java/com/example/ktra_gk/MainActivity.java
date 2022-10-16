@@ -21,6 +21,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
@@ -37,12 +39,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.Home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case  R.id.Profile:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.Home:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.LIstview:
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
         ListView listView = findViewById(R.id.listview);
-        Item Dog1 = new Item("Dog1", R.mipmap.imgdog_1, "infomation of Dog1");
-        Item Dog2 = new Item("Dog2", R.mipmap.imgdog_2, "infomation of Dog2");
-        Item Dog3 = new Item("Dog3", R.mipmap.imgdog_3, "infomation of Dog3");
-        Item Dog4 = new Item("Dog4", R.mipmap.imgdog_4, "infomation of Dog4");
-        Item Dog5 = new Item("Dog5", R.mipmap.imgdog_5, "infomation of Dog5");
+        Item Dog1 = new Item("Alaskan Malamute", R.mipmap.alska, "Nhanh nhẹn, độc lập, trung thành tuyệt đối, thích trượt tuyết");
+        Item Dog2 = new Item("chihuahua", R.mipmap.chihuahua, "Hết lòng, trung thành, cảnh giác, nhanh nhẹn");
+        Item Dog3 = new Item("husky", R.mipmap.husky, "Khỏe mạnh, vui vẻ, nghe lời, thích chạy nhảy");
+        Item Dog4 = new Item("poodle", R.mipmap.poodle, "Lộng lẫy, thông minh, vâng lời, nhanh nhẹn");
+        Item Dog5 = new Item("pug", R.mipmap.pug, "Nhanh nhẹn, thân thiện, vâng lời, thông minh");
 
 
 
@@ -104,11 +131,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-            MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.menu,menu);
-            return true;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -127,9 +153,9 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
         LayoutInflater inflater= getLayoutInflater();
         View view= inflater.inflate(R.layout.activity_detail,null);
-        final ImageView img=view.findViewById(R.id.img_dinner);
-        final TextView nametext= view.findViewById(R.id.namedinnertext);
-        final TextView infor= view.findViewById(R.id.dinnerinfomation);
+        final ImageView img=view.findViewById(R.id.imageView_dog);
+        final TextView nametext= view.findViewById(R.id.namedog);
+        final TextView infor= view.findViewById(R.id.doginfomation);
         if(currentindex>=0){
             img.setImageResource(list.get(currentindex).getImages_dinner());
             nametext.setText(list.get(currentindex).getItemName());

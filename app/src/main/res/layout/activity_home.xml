@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="800dp"
+    android:layout_height="1140dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradient"
@@ -29,7 +29,7 @@
                 android:id="@+id/imgprofile"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/avatar"/>
+                android:src="@drawable/ic_baseline_account_circle_24"/>
             <TextView
                 android:id="@+id/textprofile"
                 android:layout_width="300dp"
@@ -51,7 +51,7 @@
                 android:id="@+id/imgprofile"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@mipmap/imgdog_1"/>
+                android:src="@drawable/ic_baseline_list_alt_24"/>
             <TextView
                 android:id="@+id/textprofile"
                 android:layout_width="300dp"
@@ -75,4 +75,21 @@
         android:textSize="24dp"
         style="@style/Widget.AppCompat.Button.Colored"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="83dp"
+        >
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_navigation"
+            app:itemBackground="@color/startblue"
+            app:itemTextColor="@color/colorPrimaryDark"
+            app:itemIconTint="@color/colorPrimary"
+            app:menu="@menu/navigation" />
+    </LinearLayout>
+
 </LinearLayout>

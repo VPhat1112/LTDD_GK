@@ -3,8 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="800dp"
+    android:layout_height="1140dp"
     tools:context="com.example.ktra_gk.MainActivity"
     android:background="@color/graylight"
     android:orientation="vertical">
@@ -223,10 +223,25 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="300dp"
         android:layout_height="90dp"
-        android:text="Home"
+        android:text="Logout"
         android:textColorHint="@color/graylight"
         android:textSize="20dp"/>
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="246dp"
+        >
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_navigation"
+            app:itemBackground="@color/startblue"
+            app:itemTextColor="@color/colorPrimaryDark"
+            app:itemIconTint="@color/colorPrimary"
+            app:menu="@menu/navigation" />
+    </LinearLayout>
 
 </LinearLayout>
