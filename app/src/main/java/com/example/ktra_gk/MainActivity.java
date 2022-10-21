@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.Home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -85,7 +87,16 @@ public class MainActivity extends AppCompatActivity {
         // When the user clicks on the ListItem
 
 
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent myintent = new Intent(MainActivity.this,DetailActivity.class);
+                myintent.putExtra("name",list.get(i).getItemName());
+                myintent.putExtra("info",list.get(i).getItemInfo());
+                myintent.putExtra("images",list.get(i).getImages_dinner());
+                startActivity(myintent);
+            }
+        });
 
     }
 
@@ -101,10 +112,6 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info=(AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int which_item=info.position;
         switch (item.getItemId()){
-            case R.id.menu_infomation_item:
-                this.currentindex=which_item;
-                showinfomation();
-                return true;
             case R.id.menu_edit_item:
                 this.currentindex= which_item;
                 showDialogAdd();
@@ -149,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    private void  showinfomation(){
+    /*private void  showinfomation(){
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
         LayoutInflater inflater= getLayoutInflater();
         View view= inflater.inflate(R.layout.activity_detail,null);
@@ -170,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 });
         builder.show();
 
-    }
+    }*/
     private void  showDialogAdd(){
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
         LayoutInflater inflater= getLayoutInflater();

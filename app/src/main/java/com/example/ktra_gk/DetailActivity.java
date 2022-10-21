@@ -15,11 +15,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity extends AppCompatActivity {
     private Button btnback;
+    private TextView name,info;
+    private ImageView imageView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        name=findViewById(R.id.namedog);
+        info=findViewById(R.id.doginfomation);
+        imageView=findViewById(R.id.imageView_dog);
+        btnback=(Button) findViewById(R.id.btnback);
 
+        Intent myintent = getIntent();
+        String namephone = myintent.getStringExtra("name");
+        name.setText(namephone);
+
+
+
+        Intent myintent1 = getIntent();
+        int imgoto = myintent.getIntExtra("images",R.mipmap.alska);
+        imageView.setImageResource(imgoto);
+
+        Intent myintent2 = getIntent();
+        String infomation = myintent.getStringExtra("info");
+        info.setText(infomation);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(DetailActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
